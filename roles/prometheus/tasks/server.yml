@@ -2,7 +2,13 @@
   ansible.builtin.template:
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
-  notify: Restart prometheus
+  #notify: Restart prometheus
+
+- name: Restart prometheus
+  ansible.builtin.systemd:
+    name: prometheus
+    state: restarted
+    enabled: yes
 
 - name: Wait for Prometheus to start
   ansible.builtin.wait_for:
