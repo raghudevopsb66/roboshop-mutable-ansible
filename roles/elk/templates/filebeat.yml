@@ -3,6 +3,8 @@ filebeat.inputs:
   enabled: true
   paths:
     - /var/log/nginx/access.log
+  fields:
+    component: {{COMPONENT}}
 
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
