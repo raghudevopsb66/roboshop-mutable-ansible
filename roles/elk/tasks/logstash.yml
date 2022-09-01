@@ -4,7 +4,7 @@
     dest: /etc/logstash/conf.d/logstash.conf
 
 - name: Restart Logstash
-  ansible.builtin.yum:
+  ansible.builtin.systemd:
     name: lostash
     state: restarted
 
