@@ -22,6 +22,10 @@
   set_fact:
     MEM: "{{out.stdout}}"
 
+- name: Print MEM
+  debug:
+    msg: "{{MEM}}"
+
 - name: Include SystemD
   ansible.builtin.include_role:
     name: common
