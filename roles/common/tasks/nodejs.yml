@@ -11,10 +11,12 @@
     name: common
     tasks_from: app-pre-setup
 
-- name: Install NodeJS dependencies
-  community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
-  become_user: roboshop
+## No need of this since this step is done at CI level
+
+#- name: Install NodeJS dependencies
+#  community.general.npm:
+#    path: /home/roboshop/{{COMPONENT}}
+#  become_user: roboshop
 
 - name: Download PEM file for DocumentDB
   ansible.builtin.get_url:
