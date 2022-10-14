@@ -11,12 +11,13 @@
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
-- name: Restart {{COMPONENT}} Service
-  ansible.builtin.systemd:
-    name: "{{COMPONENT}}"
-    state: restarted
-    enabled: yes
-    daemon-reload: yes
+## Commented for Immutable Approach
+#- name: Restart {{COMPONENT}} Service
+#  ansible.builtin.systemd:
+#    name: "{{COMPONENT}}"
+#    state: restarted
+#    enabled: yes
+#    daemon-reload: yes
 
 - name: Include Filebeat Installation
   ansible.builtin.include_role:
